@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Plant Disease Detection</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Smart Agriculture AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+<header>
+  <h1>🌾 Smart Agriculture AI</h1>
+  <select id="language" onchange="changeLanguage()">
+    <option value="en">English</option>
+    <option value="te">తెలుగు</option>
+    <option value="hi">हिन्दी</option>
+  </select>
+</header>
 
-    <div class="container">
-        <h1>🌿 Plant Disease Detection</h1>
-        <p class="subtitle">Upload a leaf image to detect disease</p>
+<div class="card">
+  <h2 id="uploadText">Upload Leaf Image</h2>
+  <input type="file" id="imageInput" accept="image/*">
+  <img id="preview">
 
-        <div class="upload-box">
-            <input type="file" id="imageInput" accept="image/*">
-            <img id="preview" alt="Image Preview">
-        </div>
+  <button onclick="predict()">🌱 Detect Disease</button>
 
-        <button onclick="predictDisease()">Detect Disease</button>
+  <div class="result">
+    <h3 id="resultTitle">Diagnosis Result</h3>
+    <p id="output">---</p>
+  </div>
 
-        <div class="result-box" id="result">
-            <h3>Result:</h3>
-            <p id="output">No prediction yet</p>
-        </div>
-    </div>
+  <div class="treatment">
+    <h3 id="treatTitle">Treatment Suggestion</h3>
+    <p id="treatmentText">---</p>
+  </div>
+</div>
 
-    <script src="script.js"></script>
+<footer>
+  <p>AI for Farmers • Smart Farming</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,70 +1,90 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6") no-repeat center center/cover;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f3efe8;
 }
 
-header {
-  background: rgba(46,125,50,0.9);
-  color: white;
-  padding: 15px;
+/* HERO */
+.hero {
+  background: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6")
+  center/cover;
+  height: 45vh;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
 }
 
-.card {
-  background: rgba(255,255,255,0.95);
-  max-width: 420px;
-  margin: 30px auto;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+.hero-content {
+  background: rgba(27,94,32,0.85);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
   text-align: center;
 }
 
-input, button, select {
-  width: 100%;
-  margin-top: 10px;
-  padding: 10px;
+/* MAIN CARD */
+.main-card {
+  background: white;
+  max-width: 480px;
+  margin: -40px auto 30px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-button {
-  background: #388e3c;
-  color: white;
-  border: none;
-  border-radius: 8px;
+select, input, button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
   font-size: 16px;
 }
 
+button {
+  background: #5d4037;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
 button:hover {
-  background: #1b5e20;
+  background: #3e2723;
 }
 
 #preview {
   width: 100%;
-  display: none;
   margin-top: 10px;
+  display: none;
   border-radius: 10px;
 }
 
-.result, .treatment {
-  background: #f1f8e9;
+/* CARDS */
+.result-card, .tips, .weather {
+  background: #e8f5e9;
+  padding: 15px;
   margin-top: 15px;
-  padding: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-footer {
+/* LOGIN */
+.login-body {
+  background: linear-gradient(#2e7d32, #4e342e);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 320px;
   text-align: center;
-  color: white;
-  padding: 10px;
-  background: rgba(46,125,50,0.9);
 }
 
-/* Mobile Friendly */
+/* RESPONSIVE */
 @media (max-width: 600px) {
-  .card {
-    margin: 15px;
+  .hero {
+    height: 35vh;
   }
 }

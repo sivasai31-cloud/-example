@@ -8,37 +8,60 @@
 </head>
 
 <body>
-<header>
-  <h1>🌾 Smart Agriculture AI</h1>
-  <select id="language" onchange="changeLanguage()">
-    <option value="en">English</option>
-    <option value="te">తెలుగు</option>
-    <option value="hi">हिन्दी</option>
-  </select>
-</header>
 
-<div class="card">
-  <h2 id="uploadText">Upload Leaf Image</h2>
-  <input type="file" id="imageInput" accept="image/*">
-  <img id="preview">
-
-  <button onclick="predict()">🌱 Detect Disease</button>
-
-  <div class="result">
-    <h3 id="resultTitle">Diagnosis Result</h3>
-    <p id="output">---</p>
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>🌱 Smart Agriculture AI</h1>
+    <p id="heroText">AI-based Plant Disease Detection</p>
   </div>
+</section>
 
-  <div class="treatment">
-    <h3 id="treatTitle">Treatment Suggestion</h3>
-    <p id="treatmentText">---</p>
-  </div>
+<!-- MAIN CARD -->
+<div class="main-card">
+
+<select id="language" onchange="changeLanguage()">
+  <option value="auto">Auto</option>
+  <option value="en">English</option>
+  <option value="te">తెలుగు</option>
+  <option value="hi">हिन्दी</option>
+</select>
+
+<h2 id="uploadText">Upload Leaf Image</h2>
+
+<select id="crop">
+  <option>Tomato</option>
+  <option>Potato</option>
+  <option>Pepper</option>
+</select>
+
+<input type="file" id="imageInput" accept="image/*">
+<img id="preview">
+
+<button onclick="predict()">🌿 Detect Disease</button>
+
+<div class="result-card">
+  <h3 id="resultTitle">Result</h3>
+  <p id="output">---</p>
+  <p id="confidence">Confidence: --%</p>
 </div>
 
-<footer>
-  <p>AI for Farmers • Smart Farming</p>
-</footer>
+<div class="tips">
+  <h3>✔ Do’s</h3>
+  <p id="dos"></p>
+
+  <h3>❌ Don’ts</h3>
+  <p id="donts"></p>
+</div>
+
+<div class="weather">
+  <h3>🌦 Weather Tip</h3>
+  <p id="weatherTip"></p>
+</div>
+
+</div>
 
 <script src="script.js"></script>
 </body>
 </html>
+

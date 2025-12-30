@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Agriculture AI - Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+<div class="login-card">
+  <h2>🌾 Smart Agriculture AI</h2>
+  <p>Login with Mobile or Email</p>
+
+  <input type="text" id="userInput" placeholder="Mobile number or Email">
+  <button onclick="sendOTP()">Send OTP</button>
+
+  <div id="otpBox" style="display:none;">
+    <input type="text" id="otpInput" placeholder="Enter OTP">
+    <button onclick="verifyOTP()">Verify OTP</button>
+  </div>
+
+  <p id="loginMsg"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

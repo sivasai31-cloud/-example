@@ -1,35 +1,58 @@
-const preview = document.getElementById("preview");
+/* LOGIN */
+let demoOTP = "1234";
 
-document.getElementById("imageInput").addEventListener("change", e => {
-  const file = e.target.files[0];
-  preview.src = URL.createObjectURL(file);
+function sendOTP() {
+  document.getElementById("otpBox").style.display = "block";
+  document.getElementById("loginMsg").innerText =
+    "Demo OTP sent: 1234";
+}
+
+function verifyOTP() {
+  if (document.getElementById("otpInput").value === demoOTP) {
+    window.location.href = "index.html";
+  } else {
+    document.getElementById("loginMsg").innerText = "Invalid OTP";
+  }
+}
+
+/* IMAGE PREVIEW */
+imageInput?.addEventListener("change", e => {
+  preview.src = URL.createObjectURL(e.target.files[0]);
   preview.style.display = "block";
 });
 
+/* AI DEMO */
 function predict() {
-  const disease = "Early Blight";
-  document.getElementById("output").innerText = disease;
-  document.getElementById("treatmentText").innerText =
-    "Use fungicide and remove infected leaves.";
+  document.getElementById("output").innerText = "Early Blight";
+  document.getElementById("confidence").innerText = "Confidence: 87%";
+
+  document.getElementById("dos").innerText =
+    "Use fungicide, remove infected leaves";
+
+  document.getElementById("donts").innerText =
+    "Avoid excess watering";
+
+  document.getElementById("weatherTip").innerText =
+    "High humidity detected. Monitor crops carefully.";
 }
 
-/* Language Support */
-function changeLanguage() {
-  const lang = document.getElementById("language").value;
+/* LANGUAGE AUTO-DETECT */
+window.onload = () => {
+  const lang = navigator.language.slice(0,2);
+  if (lang === "te") changeLanguage("te");
+  else if (lang === "hi") changeLanguage("hi");
+};
+
+function changeLanguage(force) {
+  const lang = force || document.getElementById("language").value;
 
   if (lang === "te") {
     uploadText.innerText = "ఆకును అప్లోడ్ చేయండి";
     resultTitle.innerText = "ఫలితం";
-    treatTitle.innerText = "చికిత్స సూచన";
   }
   if (lang === "hi") {
     uploadText.innerText = "पत्ता अपलोड करें";
     resultTitle.innerText = "परिणाम";
-    treatTitle.innerText = "उपचार सुझाव";
-  }
-  if (lang === "en") {
-    uploadText.innerText = "Upload Leaf Image";
-    resultTitle.innerText = "Diagnosis Result";
-    treatTitle.innerText = "Treatment Suggestion";
   }
 }
+
